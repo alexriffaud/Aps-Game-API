@@ -19,7 +19,7 @@ import com.apside.apsgame.repository.UserRepository;
 import com.apside.apsgame.util.JwtUtil;
 
 @RestController
-@RequestMapping("/api/v1/daproject")
+@RequestMapping("/api/v1/apsgame")
 public class LoginController 
 {
 	@Autowired

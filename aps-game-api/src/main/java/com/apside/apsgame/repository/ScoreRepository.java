@@ -18,4 +18,15 @@ public interface ScoreRepository extends JpaRepository<Score, Long> {
 
 	Optional<Score> findById(Long id);
 	List<Score> findAll();
+	
+	@Query(value = "SELECT apsgame.score.id, apsgame.score.score, apsgame.score.date FROM apsgame.score WHERE user = ?1", nativeQuery = true)
+	List<Score> findByUser(Long id);
+	
+	@Transactional
+	@Modifying
+	@Query(value = "INSERT INTO apsgame.user (score, user, date) " 
+			+ "VALUES ( :score , :user, :date ) ", nativeQuery = true)
+	void insertUser(@Param("score") Long score,
+					@Param("user") Long user,
+					@Param("date") LocalDateTime date);
 }
