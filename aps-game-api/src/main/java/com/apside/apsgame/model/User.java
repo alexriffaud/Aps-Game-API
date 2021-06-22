@@ -1,14 +1,13 @@
 package com.apside.apsgame.model;
 
 import java.time.LocalDateTime;
-import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Controller;
+
 
 @Entity
 @Controller
@@ -22,9 +21,8 @@ public class User {
 	private String password;
 	private LocalDateTime birthdate;
 	
-
-    @OneToMany(mappedBy="user")
-    private Set<Score> scores;
+//    @OneToMany(mappedBy="user")
+//    private Set<Score> scores;
 
 	public User() {
 	}
@@ -48,17 +46,17 @@ public class User {
 	
 	
 
-	public User(Long id, String login, String mail, String firstname, String password, LocalDateTime birthdate,
-			Set<Score> scores) {
-		super();
-		this.id = id;
-		this.login = login;
-		this.mail = mail;
-		this.firstname = firstname;
-		this.password = password;
-		this.birthdate = birthdate;
-		this.scores = scores;
-	}
+//	public User(Long id, String login, String mail, String firstname, String password, LocalDateTime birthdate,
+//			Set<Score> scores) {
+//		super();
+//		this.id = id;
+//		this.login = login;
+//		this.mail = mail;
+//		this.firstname = firstname;
+//		this.password = password;
+//		this.birthdate = birthdate;
+//		this.scores = scores;
+//	}
 
 	public Long getId() {
 		return id;
@@ -108,11 +106,11 @@ public class User {
 		this.birthdate = birthdate;
 	}
 
-	public Set<Score> getScores() {
-		return scores;
-	}
-
-	public void setScores(Set<Score> scores) {
-		this.scores = scores;
-	}
+//	public Set<Score> getScores() {
+//		return scores;
+//	}
+//
+//	public void setScores(Set<Score> scores) {
+//		this.scores = scores;
+//	}
 }
