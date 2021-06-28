@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
 	@Override
 	protected void configure(HttpSecurity http) throws Exception 
 	{
-        http.csrf().disable().authorizeRequests().antMatchers("/api/v1/apsgame/login", "/api/v1/daproject/signup")
+        http.csrf().disable().authorizeRequests().antMatchers("/api/v1/apsgame/login", "/api/v1/apsgame/setup", "/api/v1/apsgame/signup")
 	        .permitAll().anyRequest().authenticated()
 	        .and().exceptionHandling().and().sessionManagement()
 	        .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
